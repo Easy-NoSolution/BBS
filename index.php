@@ -12,8 +12,8 @@
     </tr> <tr>
         <td>
             <?php
-            require ('conn.php')
-            $result = mysqli_query("select * from bbs_info order by id DESC ");
+            require ('conn.php');
+            $result = mysqli_query("select * from bbs_info order by id DESC", MYSQLI_STORE_RESULT);
             while ($row = mysqli_fetch_array($result, MYSQLI_BOTH))
             {
             ?>
