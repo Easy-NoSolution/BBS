@@ -13,7 +13,7 @@ if (empty($id)) {
     exit(json_encode($json));
 }
 $result = mysqli_query($conn, 'select * from bbs_info where id='.intval($id));
-$row = mysqli_fetch_row($result);
+$row = mysqli_fetch_array($result, MYSQLI_BOTH);
 if (!$row) {
     $json = array('data' => NULL, 'info' => '无该id信息', 'code' => -201);
     exit(json_encode($json));
