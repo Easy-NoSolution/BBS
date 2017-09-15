@@ -6,7 +6,7 @@
 <body>
 <?php
 require ('conn.php');
-if ($_GET['action'] == 'save') {
+if ($_POST['action'] == 'save') {
     $name = trim($_POST['name']);
     $content = trim($_POST['content']);
     if (!get_magic_quotes_gpc()) {
