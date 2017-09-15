@@ -28,7 +28,10 @@ if (@$_GET['action'] == 'save') {
         echo '<a href="javascript:history.back()">返回</a>';
         exit();
     }
-    $sql = "update bbs_info set name='".$name."', content='".$content." where id=".intval($_POST['id']);
+    $sql = "UPDATE bbs_info set
+             name='".$name."',
+             content='".$content." 
+             where id=".intval($_POST['id']);
     if (!mysqli_query($conn, $sql)) {
         echo "<P>修改留言出错!</P>";
         exit();
