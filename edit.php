@@ -30,7 +30,7 @@ if (@$_GET['action'] == 'save') {
     }
     $sql = "UPDATE bbs_info set
              name='".$name."',
-             content='".$content." 
+             content='".$content."' 
              where id=".intval($_POST['id']);
     if (!mysqli_query($conn, $sql)) {
         echo "<P>修改留言出错!</P>";
