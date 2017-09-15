@@ -18,8 +18,6 @@ if (!$row) {
     $json = array('data' => NULL, 'info' => '无该id信息', 'code' => -201);
     exit(json_encode($json));
 }
-while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-    $json.addslashes(array('id' => $row['id'], 'name' => $row['name'], 'content' => $row['content'], 'time' => $row['time']));
-}
+$json = array('id' => $row['id'], 'name' => $row['name'], 'content' => $row['content'], 'time' => $row['time']);
 exit(json_encode($json));
 mysqli_free_result($result);
