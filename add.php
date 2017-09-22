@@ -29,7 +29,6 @@ if (@$_GET['action'] == 'save') {
         exit();
     }
     $sql = "insert into bbs_info (name, content, time) VALUES ('".$name."', '".$content."', '".date('Y-m-d H-i-s')."')";
-    echo $sql;
     if (!mysqli_query($conn, $sql)) {
         echo "<P>增加留言出错!</P>";
         exit();
